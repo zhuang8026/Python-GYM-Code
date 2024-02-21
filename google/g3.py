@@ -8,7 +8,7 @@ def scrape_yahoo_search(keyword, num_pages, num_results_per_page):
     search_url = base_url + keyword
 
     # 创建CSV文件
-    with open(f'{keyword}_search_results.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    with open(f'{keyword}_search_results.csv', 'w', newline='', encoding='utf-8-sig') as csvfile:
         fieldnames = ['Title', 'URL', 'Content', 'Date']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -58,7 +58,7 @@ def scrape_yahoo_search(keyword, num_pages, num_results_per_page):
     print(f"Search results for '{keyword}' saved to {keyword}_search_results.csv")
 
 # 指定关键字、搜索页数和每页结果数量
-keywords = ["近零建築示範應用"]  # "數據治理", "建築淨零", "近零建築示範應用", "Smart city", "Eco-city"
+keywords = ["數據治理", "建築淨零", "近零建築示範應用", "Smart city", "Eco-city"]  # "數據治理", "建築淨零", "近零建築示範應用", "Smart city", "Eco-city"
 num_pages = 10
 num_results_per_page = 10
 
